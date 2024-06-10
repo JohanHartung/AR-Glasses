@@ -28,7 +28,7 @@ try:
     draw.text((70, 50), 'AR-Brille', fill = (255,255,255),font=Font)  # Change fill color to white
     
     disp.ShowImage(image1)
-    time.sleep(5)
+    time.sleep(50000)
 except KeyboardInterrupt:
     disp.module_exit()
     exit()
