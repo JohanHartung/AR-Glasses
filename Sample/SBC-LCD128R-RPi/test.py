@@ -77,7 +77,7 @@ def display_text(text):
         exit()
 
 def main():
-    display_text("Starting")
+    display_text("Starting YO")
     try:
         display_text("Connecting")
         open_bluetooth_server_socket()
@@ -85,7 +85,9 @@ def main():
     except:
         print("Error:" + sys.exc_info()[0])
         display_text("Error")   
-
+    
+    
+    display_text("Wierd")
 
     #display_text(sys.argv[1:])
 
