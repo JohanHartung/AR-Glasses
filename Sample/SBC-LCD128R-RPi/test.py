@@ -4,6 +4,7 @@ from lib import LCD_1inch28
 from PIL import Image,ImageDraw,ImageFont,ImageOps
 import sys
 import bluetooth
+import logging
 
 
 def open_bluetooth_server_socket():
@@ -39,6 +40,10 @@ def open_bluetooth_server_socket():
         client_sock.close()
         server_sock.close()
 
+
+def log_error(error_message):
+            logging.basicConfig(filename='error.log', level=logging.ERROR)
+            logging.error(error_message)
 
 def display_text(text):
     # Raspberry Pi pin configuration:
@@ -76,7 +81,8 @@ def main():
         open_bluetooth_server_socket()
         display_text("Connected")
     except:
-        display_text("Error")
+        display_text("Error")   
+        log_error("An error occurred.")
 
 
     #display_text(sys.argv[1:])
