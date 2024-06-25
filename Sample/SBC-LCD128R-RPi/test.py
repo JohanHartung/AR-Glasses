@@ -3,7 +3,7 @@ import spidev as SPI
 from lib import LCD_1inch28
 from PIL import Image,ImageDraw,ImageFont,ImageOps
 import sys
-import pybluez
+import bluetooth
 
 
 def open_bluetooth_server_socket():
