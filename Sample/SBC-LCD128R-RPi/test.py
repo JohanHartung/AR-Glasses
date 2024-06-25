@@ -78,6 +78,7 @@ def display_text(text):
 
 def main():
     display_text("YO Starting")
+    display_text("NO Starting")
     print("Starting")
     try:
         print("Connecting")
