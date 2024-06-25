@@ -79,6 +79,7 @@ def display_text(text):
 def main():
     display_text("Starting")
     try:
+        display_text("Connecting")
         open_bluetooth_server_socket()
         display_text("Connected")
     except:
