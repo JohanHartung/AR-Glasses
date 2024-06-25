@@ -82,7 +82,7 @@ def main():
         display_text("Connected")
     except:
         display_text("Error")   
-        log_error("An error occurred.")
+        print("Error:" + sys.exc_info()[0])
 
 
     #display_text(sys.argv[1:])
