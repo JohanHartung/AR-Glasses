@@ -78,7 +78,9 @@ def display_text(text):
 
 def main():
     display_text("YO Starting")
+    print("Starting")
     try:
+        print("Connecting")
         display_text("Connecting")
         open_bluetooth_server_socket()
         display_text("Connected")
