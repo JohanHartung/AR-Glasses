@@ -71,7 +71,8 @@ def display_text(text):
         image1 = ImageOps.mirror(image1)
 
         disp.ShowImage(image1)
-        time.sleep(50000)
+        #time.sleep(50000)
+        time.sleep(1)
         exit()
     except KeyboardInterrupt:
         disp.module_exit()
