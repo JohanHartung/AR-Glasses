@@ -72,7 +72,7 @@ def display_text(text):
 
         disp.ShowImage(image1)
         #time.sleep(50000)
-        time.sleep(1)
+        #time.sleep(1)
         exit()
     except KeyboardInterrupt:
         disp.module_exit()
