@@ -19,6 +19,8 @@ def display_text(text):
     # Set up
     fontSize = 35
     displayTime = 30
+    xPos = 45
+    yPos = 45
 
     # Raspberry Pi pin configuration:
     RST = 27
@@ -40,7 +42,7 @@ def display_text(text):
         # Reference font file and draw text
         Font = ImageFont.truetype("SourceSansPro.ttf", fontSize)
         text = preProcessText(str(text))
-        draw.text((60, 50), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
+        draw.text((xPos, yPos), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
         image1 = ImageOps.mirror(image1)
         disp.ShowImage(image1)
         time.sleep(displayTime)

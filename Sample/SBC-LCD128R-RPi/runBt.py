@@ -37,9 +37,10 @@ def open_bluetooth_server_socket():
             if not data:
                 break
             print("Received: %s" % data)
+            
             messages = preProcessText(data.decode())
             for message in messages:
-                process = subprocess.Popen(['python3', 'test.py', f'{message}'])
+                process = subprocess.Popen(['python3', 'test.py', str(message)])
                 charCount = len(message)
                 readingTime = 4+(charCount * 0.5)
                 time.sleep(max(readingTime, 25))
