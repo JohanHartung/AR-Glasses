@@ -39,6 +39,7 @@ def display_text(text):
         draw = ImageDraw.Draw(image1)
         # Reference font file and draw text
         Font = ImageFont.truetype("SourceSansPro.ttf", fontSize)
+        text = preProcessText(text)
         draw.text((70, 50), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
         image1 = ImageOps.mirror(image1)
         disp.ShowImage(image1)
@@ -48,7 +49,12 @@ def display_text(text):
         disp.module_exit()
         exit()
 
-
+#temp - remove after testing
+def preProcessText(text):
+    words = text.split(",")
+    words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
+    words = [word[:6] + '\n' + word[6:] if len(word) > 6 else word for word in words]
+    return words
 
 def main():
     display_text(sys.argv[1:])
