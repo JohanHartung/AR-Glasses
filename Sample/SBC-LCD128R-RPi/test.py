@@ -19,8 +19,8 @@ def display_text(text):
     # Set up
     fontSize = 35
     displayTime = 30
-    xPos = 45
-    yPos = 45
+    xPos = 80
+    yPos = 80
 
     # Raspberry Pi pin configuration:
     RST = 27
