@@ -60,10 +60,11 @@ def preProcessText(text):
     charsPerLine = 6
 
     words = text.split(",")
-    words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
+    cleaned_words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
     # Join words with line breaks every n characters
-    words = '\n'.join([word[i:i+charsPerLine] for word in words for i in range(0, len(word), charsPerLine)])
-    return words
+    for word in cleaned_words:
+        word = '\n'.join([word[i:i+charsPerLine] for word in words for i in range(0, len(word), charsPerLine)])
+    return cleaned_words
 
 
 def main():
