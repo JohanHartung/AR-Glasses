@@ -54,16 +54,23 @@ def open_bluetooth_server_socket():
         server_sock.close()
 
 def preProcessText(text):
+    
+    # Set up
+    charsPerLine = 6
+
     words = text.split(",")
     words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
-    words = [word[:6] + '\n' + word[6:] if len(word) > 6 else word for word in words]
+    # Join words with line breaks every n characters
+    words = '\n'.join([word[i:i+charsPerLine] for word in words for i in range(0, len(word), charsPerLine)])
     return words
 
 
 def main():
     
     print("HIIIII")
-    subprocess.Popen(['python3', 'test.py', 'NO Starting'])
+    process = subprocess.Popen(['python3', 'test.py', 'YELL-AR'])
+    time.sleep(4)
+    process.terminate()
     #display_text("YO Starting")
     #display_text("NO Starting")
     print("Starting")
