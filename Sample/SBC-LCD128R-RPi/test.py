@@ -40,7 +40,7 @@ def display_text(text):
         # Reference font file and draw text
         Font = ImageFont.truetype("SourceSansPro.ttf", fontSize)
         text = preProcessText(str(text))
-        draw.text((70, 50), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
+        draw.text((60, 50), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
         image1 = ImageOps.mirror(image1)
         disp.ShowImage(image1)
         time.sleep(displayTime)
