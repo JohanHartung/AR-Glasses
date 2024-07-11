@@ -40,7 +40,9 @@ def open_bluetooth_server_socket():
             messages = preProcessText(data.decode())
             for message in messages:
                 process = subprocess.Popen(['python3', 'test.py', f'{message}'])
-                time.sleep(10)
+                charCount = len(message)
+                readingTime = 4+(charCount * 0.5)
+                time.sleep(max(readingTime, 25))
                 process.terminate()
                 
     except IOError:
@@ -54,6 +56,7 @@ def open_bluetooth_server_socket():
 def preProcessText(text):
     words = text.split(",")
     words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
+    words = [word[:6] + '\n' + word[6:] if len(word) > 6 else word for word in words]
     return words
 
 

@@ -17,7 +17,8 @@ def log_error(error_message):
 def display_text(text):
 
     # Set up
-    fontSize=35
+    fontSize = 35
+    displayTime = 30
 
     # Raspberry Pi pin configuration:
     RST = 27
@@ -41,7 +42,7 @@ def display_text(text):
         draw.text((70, 50), ' '.join(text), fill = (255,255,255),font = Font)  # Change fill color to white
         image1 = ImageOps.mirror(image1)
         disp.ShowImage(image1)
-        time.sleep(10)
+        time.sleep(displayTime)
         exit()
     except KeyboardInterrupt:
         disp.module_exit()
