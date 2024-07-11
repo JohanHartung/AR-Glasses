@@ -53,7 +53,7 @@ def display_text(text):
 def preProcessText(text):
     words = text.split(",")
     words = [word.strip("_*").strip() for word in words if word.strip("_*").strip()]
-    words = [word[:6] + '\n' + word[6:] if len(word) > 6 else word for word in words]
+    #words = [word[:6] + '\n' + word[6:] if len(word) > 6 else word for word in words]
     return words
 
 def main():
